@@ -1,0 +1,1 @@
+document.write('<script charset="utf-8" type="text/javascript" src="http://foxrecord.com/top?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title)+'&amp;wrapper=js"></script>');
