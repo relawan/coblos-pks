@@ -144,7 +144,7 @@ return false
 });m.on("click",".close",function(){a.fadeOut();
 return false
 })})(jQuery)
-}function ShowPost1(b){(function(a){var e={blogURL:"",MaxPost:5,idcontaint:"",FirstImageSize:300,ImageSize:300,Summarylength:90,animated:false,loadingClass:"loadingz",pBlank:"http://2.bp.blogspot.com/-RFdFqW5Klsc/UitLuFMcVxI/AAAAAAAADpM/y5UnpsxUSrc/s1600/noimgs.jpg",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
+}function ShowPost1(b){(function(a){var e={blogURL:"",MaxPost:5,idcontaint:"",FirstImageSize:300,ImageSize:300,Summarylength:180,animated:false,loadingClass:"loadingz",pBlank:"https://lh4.googleusercontent.com/-NHmJDORIEgc/UsWe_adJ05I/AAAAAAAAANE/t0bbFjZO6Xg/s512/Ava%25201.jpg",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
 e=a.extend({},e,b);
 var f=a(e.idcontaint);
 f.html('<div class="box-content"><ul></ul></div>').addClass(e.loadingClass);
@@ -175,7 +175,7 @@ z=N.substring(5,7);
 I=N.substring(8,10);
 A=e.MonthNames[parseInt(z,10)-1];
 F='<div class="uj_thumb"><a title="'+H+'" class=" " href="'+E+'"><img src="'+C+'"/><span class="uj-vid"></span></a><span class="nb_slide_icon"><span class="inside"><span class="avatar"><img src="'+x+'"/></span><span class="author">Written by <strong>'+G+"</strong></span></span></span></div>";
-j='<a class="more-link" href="'+E+'">Read More</a>';
+j='<a class="more-link" href="'+E+'">Selengkapnya</a>';
 g+='<li><div class="inner-content" >'+F+'<h3><a href="'+E+'">'+H+'</a></h3><span class="post-meta"><span class="comt"><i class="icon-comments"></i>'+d+' comment</span>  <span class="dd"> <i class="icon-time"></i> '+I+'</span> <span class="dm">'+A+'</span> <span class="dy">'+y+' - </span> <span class="auth"> <i class="icon-user"></i>'+G+"</span></span>"+K+" "+j+"</div></li>"
 }a("ul",f).append(g);
 a(e.idcontaint+"  li:first-child .uj_thumb").hover(function(){a(e.idcontaint).find(".nb_slide_icon ").stop().animate({top:0},{queue:false,duration:300})
@@ -185,7 +185,7 @@ a(e.idcontaint+" .box-content").flexslider({animation:"slide",selector:".scroll-
 }else{if(e.tagName!=false){f.append('<h2 class="uj-box-title"><a href="/search/label/'+encodeURIComponent(e.tagName)+'?&max-results=7"><i class="icon-list-ul"></i></a></h2>')
 }}f.removeClass(e.loadingClass)
 },"jsonp")})(jQuery)
-}function ShowPost2(b){(function(a){var e={blogURL:"",MaxPost:5,idcontaint:"",FirstImageSize:600,ImageSize:300,Summarylength:90,animated:false,loadingClass:"loadingz",pBlank:"",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
+}function ShowPost2(b){(function(a){var e={blogURL:"",MaxPost:5,idcontaint:"",FirstImageSize:600,ImageSize:300,Summarylength:180,animated:false,loadingClass:"loadingz",pBlank:"",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
 e=a.extend({},e,b);
 var f=a(e.idcontaint);
 f.html('<div class="box-content"><ul></ul></div>').addClass(e.loadingClass);
@@ -267,7 +267,7 @@ b("#top").stop().animate({height:50,opacity:1},{duration:500,queue:false})
 }});b(function(){b("#top").click(function(){b("html, body").animate({scrollTop:0},"slow");
 return false
 })})})(jQuery);
-function PostSlide(a){(function(b){var k={blogURL:"",MaxPost:9,idcontaint:"",ImageSize:500,Summarylength:150,RandompostActive:true,loadingClass:"loadingz",pBlank:"",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
+function PostSlide(a){(function(b){var k={blogURL:"",MaxPost:9,idcontaint:"",ImageSize:500,Summarylength:250,RandompostActive:true,loadingClass:"loadingz",pBlank:"",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
 k=b.extend({},k,a);
 var e=b(k.idcontaint);
 e.html('<div class="uj_slider_wrap"><ul class="slides"></ul></div>').addClass(k.loadingClass);
@@ -292,7 +292,7 @@ h=o.substring(0,4);
 J=o.substring(5,7);
 t=o.substring(8,10);
 f=k.MonthNames[parseInt(J,10)-1];
-u='<a class="morelink" href="'+q+'">Read More »</a>';
+u='<a class="morelink" href="'+q+'">Selengkapnya Â»</a>';
 s+='<li class="uj_slider_item"><div class="slider_img"><a title="'+q+'" class="" href="'+p+'"><img src="'+K+'"/></a></div><div class="slider_caption"><h3><a href="'+p+'">'+q+"</a></h3><p> Posted by "+l+"</p>"+r+" <p>"+u+"</p></div></li>"
 }e.find("ul.slides").append(s);
 if(!k.RandompostActive){b(k.idcontaint+" .uj_slider_wrap").flexslider({animation:"fade",controlNav:true,animationLoop:true,smoothHeight:true,pauseOnHover:true,mousewheel:false});
