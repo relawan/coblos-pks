@@ -144,7 +144,7 @@ return false
 });m.on("click",".close",function(){a.fadeOut();
 return false
 })})(jQuery)
-}function ShowPost1(b){(function(a){var e={blogURL:"",MaxPost:5,idcontaint:"",FirstImageSize:300,ImageSize:300,Summarylength:250,animated:false,loadingClass:"loadingz",pBlank:"https://lh4.googleusercontent.com/-NHmJDORIEgc/UsWe_adJ05I/AAAAAAAAANE/t0bbFjZO6Xg/s512/Ava%25201.jpg",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
+}function ShowPost1(b){(function(a){var e={blogURL:"",MaxPost:5,idcontaint:"",FirstImageSize:300,ImageSize:300,Summarylength:180,animated:false,loadingClass:"loadingz",pBlank:"https://lh4.googleusercontent.com/-NHmJDORIEgc/UsWe_adJ05I/AAAAAAAAANE/t0bbFjZO6Xg/s512/Ava%25201.jpg",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
 e=a.extend({},e,b);
 var f=a(e.idcontaint);
 f.html('<div class="box-content"><ul></ul></div>').addClass(e.loadingClass);
