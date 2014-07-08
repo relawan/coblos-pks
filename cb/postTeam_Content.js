@@ -144,7 +144,51 @@ return false
 });m.on("click",".close",function(){a.fadeOut();
 return false
 })})(jQuery)
-}function ShowPost1(b){(function(a){var e={blogURL:"",MaxPost:5,idcontaint:"",FirstImageSize:300,ImageSize:300,Summarylength:180,animated:false,loadingClass:"loadingz",pBlank:"https://lh4.googleusercontent.com/-NHmJDORIEgc/UsWe_adJ05I/AAAAAAAAANE/t0bbFjZO6Xg/s512/Ava%25201.jpg",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
+}
+function ShowPost(b){(function(a){var e={blogURL:"",MaxPost:5,idcontaint:"",FirstImageSize:300,ImageSize:300,Summarylength:180,animated:false,loadingClass:"loadingz",pBlank:"https://lh4.googleusercontent.com/-NHmJDORIEgc/UsWe_adJ05I/AAAAAAAAANE/t0bbFjZO6Xg/s512/Ava%25201.jpg",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
+e=a.extend({},e,b);
+var f=a(e.idcontaint);
+f.html('<div class="box-content"><ul></ul></div>').addClass(e.loadingClass);
+a.get((e.blogURL===""?window.location.protocol+"//"+window.location.host:e.blogURL)+"/feeds/posts/default""?max-results="+e.MaxPost+"&orderby=published&alt=json-in-script",function(J){var E,H,L,d,C,F,K,y,z,I,A,N,G,x,g="",B=J.feed.entry;
+for(var D=0;
+D<B.length;
+D++){for(var O=0;
+O<B[D].link.length;
+O++){if(B[D].link[O].rel=="alternate"){E=B[D].link[O].href;
+break}}for(var N=0;
+N<O;N++){if(B[D].link[N].rel=="replies"&&B[D].link[N].type=="text/html"){d=B[D].link[N].title.split(" ")[0];
+break}}if("media$thumbnail" in B[D]){C=B[D].media$thumbnail.url
+}else{C=e.pBlank
+}if("content" in B[D]){L=B[D].content.$t
+}else{if("summary" in B[D]){L=B[D].summary.$t
+}else{L=""}}L=L.replace(/<\S[^>]*>/g,"");
+if(L.length>e.Summarylength){L=L.substring(0,e.Summarylength)+"..."
+}if(B[D]===B[0]){C=C.replace(/\/s[0-9]+\-c/g,"/s"+e.FirstImageSize+"-p");
+if(C.indexOf("i.ytimg.com/vi/")!=-1){C=C.replace("default","0")
+}K="<p>"+L+"</p>"
+}else{C=C.replace(/\/s[0-9]+\-c/g,"/s"+e.ImageSize+"-p");
+K=""}H=B[D].title.$t;
+G=B[D].author[0].name.$t;
+x=B[D].author[0].gd$image.src;
+N=B[D].published.$t.substring(0,10);
+y=N.substring(0,4);
+z=N.substring(5,7);
+I=N.substring(8,10);
+A=e.MonthNames[parseInt(z,10)-1];
+F='<div class="uj_thumb"><a title="'+H+'" class=" " href="'+E+'"><img src="'+C+'"/><span class="uj-vid"></span></a><span class="nb_slide_icon"><span class="inside"><span class="avatar"><img src="'+x+'"/></span><span class="author">Written by <strong>'+G+"</strong></span></span></span></div>";
+j='<a class="more-link" href="'+E+'">Selengkapnya</a>';
+g+='<li><div class="inner-content" >'+F+'<h3><a href="'+E+'">'+H+'</a></h3><span class="post-meta"><span class="comt"><i class="icon-comments"></i>'+d+' comment</span>  <span class="dd"> <i class="icon-time"></i> '+I+'</span> <span class="dm">'+A+'</span> <span class="dy">'+y+' - </span> <span class="auth"> <i class="icon-user"></i>'+G+"</span></span>"+K+" "+j+"</div></li>"
+}a("ul",f).append(g);
+a(e.idcontaint+"  li:first-child .uj_thumb").hover(function(){a(e.idcontaint).find(".nb_slide_icon ").stop().animate({top:0},{queue:false,duration:300})
+},function(){a(e.idcontaint).find(".nb_slide_icon ").stop().animate({top:"-60px"},{queue:false,duration:300})
+});if(e.animated){a("ul",f).addClass("scroll-item");
+a(e.idcontaint+" .box-content").flexslider({animation:"slide",selector:".scroll-item > li",animationLoop:true,itemWidth:240,pauseOnHover:true,move:3,itemMargin:0,minItems:3,mousewheel:false,maxItems:4})
+}else{if(e.tagName!=false){f.append('<h2 class="uj-box-title"><a href="/feeds/posts/default?&max-results=7"><i class="icon-list-ul"></i></a></h2>')
+}}f.removeClass(e.loadingClass)
+},"jsonp")})(jQuery)
+}
+
+function ShowPost1(b){(function(a){var e={blogURL:"",MaxPost:5,idcontaint:"",FirstImageSize:300,ImageSize:300,Summarylength:180,animated:false,loadingClass:"loadingz",pBlank:"https://lh4.googleusercontent.com/-NHmJDORIEgc/UsWe_adJ05I/AAAAAAAAANE/t0bbFjZO6Xg/s512/Ava%25201.jpg",MonthNames:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],tagName:false};
 e=a.extend({},e,b);
 var f=a(e.idcontaint);
 f.html('<div class="box-content"><ul></ul></div>').addClass(e.loadingClass);
